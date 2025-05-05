@@ -24,15 +24,16 @@ This repository demonstrates a complete CI/CD pipeline for a simple Flask applic
 
 #### Configure GitHub Secrets:
    - Navigate to your repository > Settings > Secrets and variables > Actions
-   - Add the following secrets:
-     - `DOCKER_USERNAME`: Your Docker Hub username
-     - `DOCKER_PASSWORD`: Your Docker Hub password or access token
+   - Add the following secrets and variable:
+     - `DOCKER_USERNAME`: Your Docker Hub username as variable
+     - `DOCKER_PASSWORD`: Your Docker Hub password or access token as secret
      - `SSH_HOST`: Your server's IP address
      - `SSH_USERNAME`: Your server's SSH username
      - `SSH_PASSWORD`: Your SSH password
      - `SSH_PORT`: Your SSH port (usually 22)
 
-### Screenshot of GitHub Secrets Configuration
+### Screenshot of GitHub Variable and Secrets Configuration
+![Variables](./img/variables.png)
 ![Secrets](./img/secrets.png)
 
 ## CI/CD Pipeline Explanation
@@ -53,7 +54,7 @@ The CI/CD pipeline is defined in `.github/workflows/deploy.yml` and consists of 
    - Runs a new container with the updated image
 
 ### Screenshot of GitHub Actions Workflow Execution
-<!-- [Will add screenshot here] -->
+![Workflow](./img/workflow.png)
 
 ## Assumptions and Limitations
 
@@ -75,4 +76,4 @@ After pushing changes to the main branch:
 2. Once the workflow succeeds, visit http://your-server-ip:5000 to see your deployed application.
 
 ### Screenshot of Deployed Application
-<!-- [Will add screenshot here] -->
+![Website](./img/website.png)
